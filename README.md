@@ -1,1 +1,1 @@
-## 🎧 Find your playlist inspired by the same person
+## 🎧 Find your playlist inspired by the person maybe the same as you
