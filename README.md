@@ -1,1 +1,1 @@
-## 🎧 Find your playlist inspired by the person maybe the same as you
+## 🎧 Set a period and periodically sum up the to dos during this time
