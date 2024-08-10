@@ -1,5 +1,7 @@
 {
   "name": "to-sum-list",
+  "main": "index.js",
+  "type":"module",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
