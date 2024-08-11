@@ -1,0 +1,16 @@
+.userInfo{
+    display: flex;
+    flex-direction: row;
+    /*background: aquamarine;*/
+}
+.avatar{
+    width: 60px;
+    padding-left: 20px;
+    padding-right: 10px;
+    margin: auto;
+}
+.user-name{
+    width: 150px;
+    font-size: 1.5rem;
+    line-height: 180px;
+}
