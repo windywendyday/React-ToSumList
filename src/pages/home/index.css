@@ -1,0 +1,18 @@
+.bottom {
+    width: 100vw;
+    height: 10vh;
+    border-top: solid 1px var(--adm-color-border);
+    position: fixed;
+    bottom: 0;
+    border-radius: 6% 6% 0 0;
+    box-shadow: 0px 20px 28px gray;
+}
+
+.adm-tab-bar-item-icon {
+    font-size: 32px;
+    margin-top: 4px;
+}
+.adm-tab-bar-item-title-with-icon {
+    margin-top: 18px;
+    font-size: 16px;
+}
