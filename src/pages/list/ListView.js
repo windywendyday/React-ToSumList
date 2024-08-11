@@ -11,7 +11,7 @@ export default function ListView() {
 
     }
     return (
-        <div>
+        <div className='listView'>
             <div className='header'>
                 <UserInfo></UserInfo>
                 <div className='button' onClick={() => setPopUpVisible(true)}>

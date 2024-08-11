@@ -1,3 +1,6 @@
+.listView{
+
+}
 .header{
     display: flex;
     width: 100vw;
@@ -8,4 +11,7 @@
     text-align: right;
     margin: auto;
     padding-right: 20px;
+}
+.adm-list-item-content-main {
+    font-size: 22px;
 }
