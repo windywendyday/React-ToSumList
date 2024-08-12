@@ -1,10 +1,11 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import UserInfo from "./components/userInfo/UserInfo.js";
 import ListContent from "./components/list/index.js";
 import {Button, CalendarPicker, Form, Input, Popup, Stepper} from "antd-mobile";
 import {AddCircleOutline} from "antd-mobile-icons";
 import './ListView.css'
 import dayjs from "dayjs";
+import axios from "axios";
 
 export default function ListView() {
     const [popUpVisible, setPopUpVisible] = useState(false)
@@ -12,11 +13,23 @@ export default function ListView() {
     const singleDate= null
     const [dateVal, setDateVal] = useState(new Date())
     const [form] = Form.useForm()
+    const childRef = useRef();
 
-    function createNewItem() {
+    async function createNewItem() {
         const formData = form.getFieldsValue()
+        formData.itemDeadline = dateVal
         console.log('formData',formData)
+        const res = await axios.post('/postTodo', {
+            uid: 1,
+            itemName: formData.itemName,
+            itemDeadline: formData.itemDeadline,
+            needCheckInDays: formData.needCheckInDays,
+        })
+        console.log(res)
+        setPopUpVisible(false)
+        await childRef.current.getItemList()
     }
+
     return (
         <div className='listView'>
             <div className='header'>
@@ -25,7 +38,7 @@ export default function ListView() {
                     <AddCircleOutline fontSize={36}/>
                 </div>
             </div>
-            <ListContent></ListContent>
+            <ListContent ref={childRef}></ListContent>
             <div className='popUp'>
                 <Popup
                     visible={popUpVisible}

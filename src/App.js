@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <BrowserRouter initialEntries={['/home']}>
         <Routes>
-          <Route path="/" element={<Register />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path='/home/*' element={<Home />} />
         </Routes>

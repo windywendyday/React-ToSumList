@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {forwardRef, useEffect, useImperativeHandle, useState} from 'react';
 import { List } from 'antd-mobile'
 import axios from "axios";
 
-export default function ListContent() {
+export default forwardRef(function ListContent(props, ref) {
     // const itemList = [
     //     {
     //         itemId: 0,
@@ -33,6 +33,12 @@ export default function ListContent() {
             .catch(console.error);
     }, []);
 
+    useImperativeHandle(ref, () => {
+        // 需要将暴露的接口返回出去
+        return {
+            getItemList,
+        }
+    })
     const uid = 1
 
     async function getItemList() {
@@ -59,4 +65,4 @@ export default function ListContent() {
             }
         </List>
     )
-}
+});

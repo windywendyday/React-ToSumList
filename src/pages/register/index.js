@@ -27,8 +27,12 @@ export default function Register() {
         setPassword(password)
         let { data } = await register(email, password)
         if(data.code === 'SUCCESS'){
-            navigate('/home')
+            navigate('/home/listview')
         }
+    }
+
+    function goToLogin(){
+        navigate('/login')
     }
 
     return (
@@ -64,6 +68,7 @@ export default function Register() {
                     </div>
                 </Form.Item>
             </Form>
+            <div onClick={goToLogin}>已有账号，去登录</div>
         </div>
     )
 }
